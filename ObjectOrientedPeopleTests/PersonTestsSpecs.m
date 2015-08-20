@@ -92,7 +92,7 @@ describe(@"Person", ^{
             joe.age = @11;
             NSNumber *joeHeight = [joe grow];
             
-            CGFloat newHeight = [joeHeight floatValue];
+            CGFloat newHeight = [joe.height floatValue];
             expect(newHeight).to.beInTheRangeOf(60, 61);
             
         });
