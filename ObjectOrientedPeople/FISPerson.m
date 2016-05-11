@@ -23,21 +23,33 @@
 @implementation FISPerson
 
 - (instancetype)init {
-    self = [super init];
+    self = [self initWithName:@"John"
+              ageInYears:27
+              heightInInches:72];
+    self.skills = [[NSMutableArray alloc] init];
     return self;
 }
 
 
 - (instancetype)initWithName:(NSString *)name
-                  ageInYears:(NSUInteger)years {
-    self = [super init];
+                  ageInYears:(NSUInteger)ageInYears {
+    self = [self initWithName:name
+                   ageInYears:ageInYears
+               heightInInches:72];
+    self.skills = [[NSMutableArray alloc] init];
     return self;
 }
 
 - (instancetype)initWithName:(NSString *)name
-                  ageInYears:(NSUInteger)years
-              heightInInches:(NSUInteger)inches {
+                  ageInYears:(NSUInteger)ageInYears
+              heightInInches:(NSUInteger)heightInInches {
     self = [super init];
+    if (self) {
+        _name = name;
+        _ageInYears = ageInYears;
+        _heightInInches = heightInInches;
+    }
+    self.skills = [[NSMutableArray alloc] init];
     return self;
 }
 

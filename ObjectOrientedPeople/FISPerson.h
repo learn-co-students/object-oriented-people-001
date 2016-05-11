@@ -21,11 +21,11 @@
 - (instancetype)init;
 
 - (instancetype)initWithName:(NSString *)name
-                  ageInYears:(NSUInteger)years;
+                  ageInYears:(NSUInteger)ageInYears;
 
 - (instancetype)initWithName:(NSString *)name
-                  ageInYears:(NSUInteger)years
-              heightInInches:(NSUInteger)inches;
+                  ageInYears:(NSUInteger)ageInYears
+              heightInInches:(NSUInteger)heightInInches;
 
 - (NSString *)celebrateBirthday;
 
