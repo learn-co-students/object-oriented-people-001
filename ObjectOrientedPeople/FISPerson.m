@@ -54,7 +54,23 @@
 }
 
 - (NSString *)celebrateBirthday {
-    return nil;
+    self.ageInYears = self.ageInYears + 1;
+    NSString *ordinalReturn = [self ordinalForInteger:self.ageInYears];
+    NSString *bdayMessege = [NSString stringWithFormat:@"HAPPY %lu%@ BIRTHDAY, %@!!!", self.ageInYears, [ordinalReturn uppercaseString], [self.name uppercaseString]];
+    NSLog(@"%@", bdayMessege);
+    return bdayMessege;
+}
+
+- (NSString *)ordinalForInteger:(NSUInteger)integer {
+    NSString *ordinal = @"th";
+    if (integer % 10 == 1 && integer % 100 != 11) {
+        ordinal = @"st";
+    } else if (integer % 10 == 2 && integer % 100 != 12) {
+        ordinal = @"nd";
+    } else if (integer % 10 == 3 && integer % 100 != 13) {
+        ordinal = @"rd";
+    }
+    return ordinal;
 }
 
 - (void)learnSkillBash {
