@@ -74,27 +74,41 @@
 }
 
 - (void)learnSkillBash {
-    
+    if(![self.skills containsObject:@"bash"]) {
+        [self.skills addObject:@"bash"];
+    }
 }
 
 - (void)learnSkillXcode {
-    
+    if(![self.skills containsObject:@"Xcode"]) {
+        [self.skills addObject:@"Xcode"];
+    }
 }
 
 - (void)learnSkillObjectiveC {
-    
+    if(![self.skills containsObject:@"Objective-C"]) {
+        [self.skills addObject:@"Objective-C"];
+    }
 }
 
 - (void)learnSkillObjectOrientedProgramming {
-    
+    if(![self.skills containsObject:@"Object-Oriented Programming"]) {
+        [self.skills addObject:@"Object-Oriented Programming"];
+    }
 }
 
 - (void)learnSkillInterfaceBuilder {
-    
+    if(![self.skills containsObject:@"Interface Builder"]) {
+        [self.skills addObject:@"Interface Builder"];
+    }
 }
 
 - (BOOL)isQualifiedTutor {
-    return NO;
+    if ([self.skills count] > 3) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
